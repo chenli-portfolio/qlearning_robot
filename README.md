@@ -5,6 +5,7 @@ In this project I implemented the Q-Learning solutions to a reinforcement learni
 ## Results
 
 <img src="img/results.png" alt="1" width="1000">
+
 * "0" --- Obstacle
 * "\*" --- Robot   
 * "X" --- Destination
