@@ -1,6 +1,5 @@
 """
-Test a Q Learner in a navigation problem.  (c) 2015 Tucker Balch
-2016-10-20 Added "quicksand" and uncertain actions.
+Test a Q Learner in a navigation problem.
 """
 
 import numpy as np
@@ -64,7 +63,7 @@ def movebot(data,oldpos,a):
     randomrate = 0.20 # how often do we move randomly
     quicksandreward = -100 # penalty for stepping on quicksand
 
-    # decide if we're going to ignore the action and 
+    # decide if we're going to ignore the action and
     # choose a random one instead
     if rand.uniform(0.0, 1.0) <= randomrate: # going rogue
         a = rand.randint(0,3) # choose the random direction
@@ -111,7 +110,7 @@ def test(map, epochs, learner, verbose):
     startpos = getrobotpos(map) #find where the robot starts
     goalpos = getgoalpos(map) #find where the goal is
     scores = np.zeros((epochs,1))
-    for epoch in range(1,epochs+1): 
+    for epoch in range(1,epochs+1):
         total_reward = 0
         data = map.copy()
         robopos = startpos
@@ -128,7 +127,7 @@ def test(map, epochs, learner, verbose):
                 r = stepreward # negative reward for not being at the goal
             state = discretize(newpos)
             action = learner.query(state,r)
-    
+
             if data[robopos] != 6:
                 data[robopos] = 4 # mark where we've been for map printing
             if data[newpos] != 6:
@@ -150,7 +149,7 @@ def test_code():
     verbose = True # print lots of debug stuff if True
 
     # read in the map
-    filename = 'testworlds/%s.csv' % sys.argv[1] 
+    filename = 'testworlds/%s.csv' % sys.argv[1]
     inf = open(filename)
     data = np.array([map(float,s.strip().split(',')) for s in inf.readlines()])
     originalmap = data.copy() #make a copy so we can revert to the original map later

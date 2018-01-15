@@ -1,13 +1,4 @@
-"""MC3-P2: Q-learning & Dyna - grading script.
-
-Usage:
-- Switch to a student feedback directory first (will write "points.txt" and "comments.txt" in pwd).
-- Run this script with both ml4t/ and student solution in PYTHONPATH, e.g.:
-    PYTHONPATH=ml4t:MC1-P2/jdoe7 python ml4t/mc2_p1_grading/grade_marketsim.py
-
-Copyright 2017, Georgia Tech Research Corporation
-Atlanta, Georgia 30332-0415
-All Rights Reserved
+"""Grading script
 """
 
 import pytest
@@ -137,7 +128,7 @@ qlearning_test_cases = [
     ),
 ]
 
-max_points = 100.0 
+max_points = 100.0
 html_pre_block = True  # surround comments with HTML <pre> tag (for T-Square comments field)
 
 # Test functon(s)
@@ -207,7 +198,7 @@ def test_qlearning(description, group, world_file, best_reward, median_reward, m
                 msgs.append("   author() method not implemented correctly. Found {}".format(student_author))
             else:
                 points_earned = points
-        if (not incorrect):        
+        if (not incorrect):
             points_earned += points
         if incorrect:
             inputs_str = "    group: {}\n" \
@@ -217,7 +208,7 @@ def test_qlearning(description, group, world_file, best_reward, median_reward, m
     except Exception as e:
         # Test result: failed
         msg = "Test case description: {}\n".format(description)
-        
+
         # Generate a filtered stacktrace, only showing erroneous lines in student file(s)
         tb_list = tb.extract_tb(sys.exc_info()[2])
         for i in xrange(len(tb_list)):
@@ -271,7 +262,7 @@ def movebot(data,oldpos,a):
     randomrate = 0.20 # how often do we move randomly
     quicksandreward = -100 # penalty for stepping on quicksand
 
-    # decide if we're going to ignore the action and 
+    # decide if we're going to ignore the action and
     # choose a random one instead
     if random.uniform(0.0, 1.0) <= randomrate: # going rogue
         a = random.randint(0,3) # choose the random direction
@@ -319,7 +310,7 @@ def qltest(worldmap, iterations, max_steps, learner, verbose):
     goalpos = getgoalpos(worldmap) #find where the goal is
     # max_reward = -float('inf')
     all_rewards = list()
-    for iteration in range(1,iterations+1): 
+    for iteration in range(1,iterations+1):
         total_reward = 0
         data = worldmap.copy()
         robopos = startpos
@@ -336,7 +327,7 @@ def qltest(worldmap, iterations, max_steps, learner, verbose):
                 r = stepreward # negative reward for not being at the goal
             state = discretize(newpos)
             action = learner.query(state,r)
-    
+
             if data[robopos] != 6:
                 data[robopos] = 4 # mark where we've been for map printing
             if data[newpos] != 6:

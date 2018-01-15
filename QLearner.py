@@ -1,5 +1,5 @@
 """
-Template for implementing QLearner  (c) 2015 Tucker Balch
+Implementing QLearner Li Chen 2017-Fall
 """
 
 import numpy as np
@@ -58,7 +58,7 @@ class QLearner(object):
         self.Q[self.s, self.a] = (1 - self.alpha) * (self.Q[self.s, self.a]) + self.alpha * (r + self.gamma * self.Q[s_prime,np.argmax(self.Q[s_prime,:])])
         if self.dyna > 0:
             self.Tc[self.s,self.a,s_prime] = self.Tc[self.s,self.a,s_prime] + 1
-            self.R[self.s,self.a] = (1 - self.alpha) * self.R[self.s,self.a] + self.alpha * r          
+            self.R[self.s,self.a] = (1 - self.alpha) * self.R[self.s,self.a] + self.alpha * r
             self.T[self.s,self.a,:] = self.Tc[self.s,self.a,:] / np.sum(self.Tc[self.s,self.a,:])
 
         if np.sum(self.Tc) > 3500 and self.dyna > 0:

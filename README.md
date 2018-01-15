@@ -1,11 +1,25 @@
 ## Overview
---------------------------------------------------------------------------------
+
 In this project I implemented the Q-Learning solutions to a reinforcement learning problem. I applied them to a navigation problem in this project.
 
+## Results
+##### Starting
+<img src="img/1.png" alt="1" width="150">
+##### After 10 iterations
+<img src="img/10.png" alt="1" width="150">
+##### After 50 iterations
+<img src="img/50.png" alt="1" width="150">
+##### After 100 iterations
+<img src="img/100.png" alt="1" width="150">
+##### After 200 iterations
+<img src="img/200.png" alt="1" width="150">
+##### After 500 iterations
+<img src="img/500.png" alt="1" width="150">
 
+[1]: /wp-smaller.png "Title
 
 ## Implement Q-Learner
---------------------------------------------------------------------------------
+
 My QLearner class was implemented in the file QLearner.py. It implemented the API defined below. QLearner class implemented the following methods:
 
 The **constructor QLearner()** reserves space for keeping track of Q[s, a] for the number of states and actions. It initializes Q[] with all zeros. Details on the input arguments to the constructor:
