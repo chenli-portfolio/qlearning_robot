@@ -3,20 +3,10 @@
 In this project I implemented the Q-Learning solutions to a reinforcement learning problem. I applied them to a navigation problem in this project.
 
 ## Results
-##### Starting
-<img src="img/1.png" alt="1" width="150">
-##### After 10 iterations
-<img src="img/10.png" alt="1" width="150">
-##### After 50 iterations
-<img src="img/50.png" alt="1" width="150">
-##### After 100 iterations
-<img src="img/100.png" alt="1" width="150">
-##### After 200 iterations
-<img src="img/200.png" alt="1" width="150">
-##### After 500 iterations
-<img src="img/500.png" alt="1" width="150">
 
-[1]: /wp-smaller.png "Title
+<img src="img/results.png" alt="1" width="500">
+
+
 
 ## Implement Q-Learner
 
