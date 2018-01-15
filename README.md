@@ -1,14 +1,21 @@
 ## Overview
 
-In this project I implemented the Q-Learning solutions to a reinforcement learning problem. I applied them to a navigation problem in this project.
+In this project I implemented the Q-Learning solutions to a reinforcement learning problem. This reinforcement learning problem is a navigation problem. The robot (designated as \*) is trying to find the optimal route to the destination (designated as X)
 
 ## Results
 
 <img src="img/results.png" alt="1" width="1000">
+* "0" --- Obstacle
+* "\*" --- Robot   
+* "X" --- Destination
+* "." --- Trail
+* "~" --- Quick sand
+* "@" --- Stepped in quick sand
 
 
 
-## Implement Q-Learner
+
+## Method: Implement Q-Learner
 
 My QLearner class was implemented in the file QLearner.py. It implemented the API defined below. QLearner class implemented the following methods:
 
@@ -20,7 +27,7 @@ The **constructor QLearner()** reserves space for keeping track of Q[s, a] for t
 * rar float, random action rate: the probability of selecting a random action at each step. Should range between 0.0 (no random actions) to 1.0 (always random action) with 0.5 as a typical value.
 * radr float, random action decay rate, after each update, rar = rar * radr. Ranges between 0.0 (immediate decay to 0) and 1.0 (no decay). Typically 0.99.
 * dyna integer, conduct this number of dyna updates for each regular update. When Dyna is used, 200 is a typical value.
-* verbose boolean, if True, your class is allowed to print debugging statements, if False, all printing is prohibited.
+* verbose boolean, if True, the class is allowed to print debugging statements, if False, all printing is prohibited.
 **query(s_prime, r)** is the core method of the Q-Learner. It should keep track of the last state s and the last action a, then use the new information s_prime and r to update the Q table. The learning instance, or experience tuple is <s, a, s_prime, r>. query() should return an integer, which is the next action to take. Note that it should choose a random action with probability rar, and that it should update rar according to the decay rate radr at each step. Details on the arguments:
 * s_prime integer, the the new state.
 * r float, a real valued immediate reward.
