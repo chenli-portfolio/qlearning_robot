@@ -3,13 +3,13 @@
 In this project I implemented the Q-Learning solutions to a reinforcement learning problem. This reinforcement learning problem is a navigation problem. The robot (designated as \*) is trying to find the optimal route to the destination (designated as X)
 
 ## Results
-
+Results for testworlds/world01.csv
 <img src="img/results.png" alt="1" width="1000">
 
 * "0" --- Obstacle
 * "\*" --- Robot   
 * "X" --- Destination
-* "." --- Trail
+* "." --- Trail (mark where the robot has been)
 * "~" --- Quick sand
 * "@" --- Stepped in quick sand
 
